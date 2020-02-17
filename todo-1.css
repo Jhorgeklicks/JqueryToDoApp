@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: linear-gradient(to right, #ccc 10%, #999 90%);
+    width: 100%;
+    background: linear-gradient();
+    font-size: 1.7rem;
+    box-sizing: border-box;
+}
+
+#container {
+    width: 360px;
+    margin: 0 auto;
+    background: #f7f7f7;
+    color: #f;
+    padding: 2rem;
+    margin-top: 15vh;
+
+}
+
+#container .head {
+    width: 100%;
+    background: #00f;
+    margin-bottom: 1rem;
+    height: 8vh;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+#container h1 {
+    text-transform: capitalize;
+    /*    color: #fff;*/
+    color: transparent;
+    font-size: 2.5rem;
+    white-space: nowrap;
+    position: relative;
+    flex: 2;
+}
+
+
+#container h1::before {
+    content: attr(data);
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    background: linear-gradient(to right, #fff, #f00, #0f0, #fff, yellow, #fff, crimson);
+    -webkit-background-clip: text;
+    color: transparent;
+    /*    border-b: 2px solid #fff;*/
+    animation: moveText 6s steps(14) infinite;
+}
+
+
+@keyframes moveText {
+
+    0%,
+    100% {
+        width: 0%;
+    }
+
+    25%,
+    90% {
+        width: 100%;
+    }
+}
+
+#container .head i {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+#container input {
+    padding: 1rem 1rem;
+    border-radius: 5px;
+    border: 2px solid #eee;
+    outline: none;
+    width: 100%;
+    margin-bottom: 1vh;
+    text-transform: capitalize;
+    color: #28909b;
+}
+
+#container input:focus {
+    border-bottom: 2px solid #00F;
+}
+
+.completed {
+    color: red;
+    text-decoration: line-through;
+}
+
+#container span {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5px;
+    color: #fff;
+    background: red;
+    text-align: center;
+    width: 0;
+    opacity: 0;
+    transition: .25s linear;
+
+}
+
+#container li:hover span {
+    padding: .5rem;
+    width: 40px;
+    height: 30px;
+    opacity: 1;
+}
+
+#container ul {
+    list-style: none;
+    cursor: pointer;
+}
+
+#container ul li {
+    text-transform: capitalize;
+    padding: 4px;
+    font-weight: 550;
+    background: #eee;
+}
+
+#container ul li:hover {
+    color: darkslategray;
+}
+
+#container ul li:not(:last-child) {
+    margin: 5px 0;
+}
+
+#container ul li:nth-child(odd) {
+    background: #ffff;
+}
